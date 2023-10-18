@@ -13,8 +13,8 @@ public class FlightBooking {
     }
 
     public static boolean isSeatAvailable(int bookings, int seat) {
-        int shifted = bookings >> seat;
-        return (shifted & 1) == 1;
+        int mask = 1 << seat;
+        return (mask & bookings) == Math.pow(2,seat);
     }
 
     public static int bookSeat(int bookings, int seat) {
