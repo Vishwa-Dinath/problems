@@ -14,7 +14,7 @@ public class FlightBooking {
 
     public static boolean isSeatAvailable(int bookings, int seat) {
         int mask = 1 << seat;
-        return (mask & bookings) == Math.pow(2,seat);
+        return (mask & bookings) > 0;
     }
 
     public static int bookSeat(int bookings, int seat) {
